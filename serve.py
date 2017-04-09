@@ -20,7 +20,7 @@ CORS(app)
 @app.listener('before_server_start')
 async def register_db(app, loop):
     app.pool = await create_pool(**DB_CONFIG, loop=loop, max_size=300)
-    
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--host', dest='host', type=str, default='0.0.0.0')
